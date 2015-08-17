@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../../template/layout.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:bnu="http://bootsfaces.net/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name=" contenu">
+        
+        <h:form id="formassure">
+            <div style="margin-top: -19px;margin-bottom: 10px;margin-left: 1070px">
+                        <p:button icon="ui-icon-power" title="fermer"  style="font-size: 7px" href="/index.xhtml"/> 
+        </div>
+            <p:panel  header="modification Assures">
+                <bnu:row>
+                    <bnu:column col-md="5">
+                        <p:panel header="EDITION" styleClass="panel">
+                            <center>
+                                    <h:panelGrid columns="2">
+                                       <h:outputLabel value="Nom:" for="nomasusure" />
+                                       <p:inputText disabled="#{assuresManagedBean.desactiversuppr}" style="width: 200px" id="nomasusure" value="#{assuresManagedBean.formAssures.nomasusure}" title="Nomasusure" />
+                                        <h:outputLabel  value="Prenoms:" for="prenassure" />
+                                        <p:inputText disabled="#{assuresManagedBean.desactiversuppr}" style="width: 200px"  id="prenassure" value="#{assuresManagedBean.formAssures.prenassure}" title="Prenassure" />
+                                        <h:outputLabel value="Telephone" for="telassure" />
+                                        <p:inputText disabled="#{assuresManagedBean.desactiversuppr}" style="width: 200px"  id="telassure" value="#{assuresManagedBean.formAssures.telassure}" title="Telassure" />
+                                    </h:panelGrid>
+                                <br/>
+                                 <h:panelGrid columns="1">
+                                     <p:commandButton disabled="#{assuresManagedBean.desactiversuppr}" value="modifier" icon="ui-icon-pencil" actionListener="#{assuresManagedBean.enregistrer()}"/>
+                            </h:panelGrid>
+                            </center>
+                            
+                           
+                          
+                        </p:panel>
+                  </bnu:column>
+                    <bnu:column col-md="7">
+                          <p:panel id="gridPanel" style="border-color: white; height: 380px; vertical-align: top;">
+                              <p:dataTable filteredValue="#{assuresManagedBean.datalistfiltre}"  widgetVar="assuretable" paginatorAlwaysVisible="false" id="grid" value="#{assuresManagedBean.dataListAssures}" var="assure" styleClass="datatable" selectionMode="single" selection="#{assuresManagedBean.selectedAssures}" rowKey="#{assure.codassure}" emptyMessage="aucun assure correspondant" paginator="true" rows="10" resizableColumns="true">
+                                  <p:ajax event="rowSelect" listener="#{assuresManagedBean.rowSelected()}" />
+                            <f:facet name="header">
+                                <p:outputPanel>
+                                    <h:outputText value="rechercher assure:"   />
+                                    <p:inputText id="globalFilter" onkeyup="PF('assuretable').filter()" size="30" style="margin-right: 3px;" placeholder="mot-clé(nom)"/>
+                                              <p:commandButton title="Rechercher"  update="@(.ui-datatable)" icon="ui-icon-search" />                                
+
+                                </p:outputPanel>
+                 </f:facet>
+
+                        <p:column headerText="Id" >
+                            <h:outputText value="#{assure.codassure}" />
+                        </p:column>
+                       
+                                  <p:column filterBy="#{assure.nomasusure}" filterMatchMode="contains" headerText="Nom" >
+                                      <h:outputText value="#{assure.nomasusure}" />
+                        </p:column>
+                                     <p:column headerText="prenoms" >
+                                         <h:outputText value="#{assure.prenassure}" />
+                        </p:column>
+                        <p:column headerText="telephone" >
+                            <h:outputText value="#{assure.telassure}" />
+                        </p:column>
+                     
+                        <p:column headerText="email" >
+                            <h:outputText value="#{assure.ageassur}" />
+                        </p:column>
+                      
+                        
+                    <f:facet name="footer">
+                        
+                        <center>
+                    
+                            <p:commandButton styleClass="button" id="refreshBtn" value="Actualiser" actionListener="#{reassureursManagedBean.refreshGrid()}" update="grid" icon="ui-icon-refresh" />
+                            <p:commandButton styleClass="button" id="printBtn" value="imprimer" actionListener="#{reassureursManagedBean.refreshGrid}"  icon="ui-icon-print" />
+
+                        </center>
+                        </f:facet>
+                    </p:dataTable>
+                          </p:panel>
+                    </bnu:column>
+                </bnu:row>
+                
+            </p:panel>
+         
+        </h:form>
+        
+    </ui:define>
+
+</ui:composition>

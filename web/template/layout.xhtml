@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:bnu="http://bootsfaces.net/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <h:outputStylesheet library="css" name="styles.css"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+
+
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+       	<div class="header">
+	     <div class="container">
+	        <div class="row">
+	           <div class="col-md-5">
+	              <!-- Logo -->
+	              <div class="logo">
+	                 <h1><a href="index.html"  style="bold">gCAd</a></h1>
+	              </div>
+	           </div>
+	           <div class="col-md-5">
+	              <div class="row">
+	                <div class="col-lg-12">
+	                
+	                </div>
+	              </div>
+	           </div>
+	           <div class="col-md-2">
+	              <div class="navbar navbar-inverse" role="banner">
+	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+<!--                               <p:clock /> -->
+<!--                          <bnu:label text=" :" tooltip="heure"/><p:clock   pattern="HH:mm:ss "  mode="client" /> -->
+
+	                    <ul class="nav navbar-nav">
+	                     
+	                    </ul>
+	                  </nav>
+	              </div>
+	           </div>
+	        </div>
+	     </div>
+	</div>
+        
+        
+        
+        <h:form>  
+    <p:growl id="messages"/>
+ 
+    <p:menubar>
+
+                <p:submenu label="TIERS" icon="ui-icon-person">
+                    <p:submenu label="assures" >
+                        <p:menuitem value="nouveau" url="#" />
+                        <p:menuitem value="listes" url="#" />
+                        <p:menuitem icon="ui-icon-search" value="rechercher" url="#" />
+                    </p:submenu>
+                    <p:submenu label="souscripteurs" >
+                        <p:menuitem value="nouveau" url="#" />
+                        <p:menuitem value="listes" url="#" />
+                        <p:menuitem icon="ui-icon-search" value="rechercher" url="#" />
+                    </p:submenu>
+                    <p:submenu label="entreprises" >
+                        <p:menuitem value="nouveau" url="#" />
+                        <p:menuitem value="listes" url="#" />
+                        <p:menuitem icon="ui-icon-search" value="rechercher" url="#" />
+                    </p:submenu>
+                    <p:submenu label="apporteurs" >
+                        <p:menuitem value="nouveau" url="#" />
+                        <p:menuitem value="listes" url="#" />
+                        <p:menuitem icon="ui-icon-search" value="rechercher" url="#" />
+                    </p:submenu>
+                    <p:separator />
+                </p:submenu>
+
+                <p:submenu  style="margin-left: 4px" label="PARTENAIRES" icon="ui-icon-person">
+                    <p:submenu label="coassureurs" >
+                        <p:menuitem value="nouveau" url="#" />
+                        <p:menuitem value="listes" url="#" />
+                        <p:menuitem icon="ui-icon-search" value="rechercher" url="#" />
+                    </p:submenu>
+                    <p:submenu label="reassureurs" >
+                        <p:menuitem value="nouveau" url="#" />
+                        <p:menuitem value="listes" url="#" />
+                        <p:menuitem icon="ui-icon-search" value="rechercher" url="#" />
+                    </p:submenu>
+                    <p:separator />
+                    <p:menuitem value="accord c2a/coass" url="#" />
+                    <p:menuitem value="accord c2a/reass" url="#" />
+                </p:submenu>
+
+
+
+                <p:submenu style="margin-left: 4px" label="SINISTRES" >
+                    <p:menuitem value="nouveau dossier" url="#" />
+                    <p:submenu label="les dossiers actifs" >
+                        <p:menuitem value="bilan mensuel" url="#" />
+                        <p:menuitem icon="ui-icon-search" value="rechercher dossier" url="#" />
+                    </p:submenu>
+                </p:submenu>
+                <p:submenu style="margin-left: 4px" label="CONTRATS" icon="ui-icon-save">
+                    <p:submenu label="nouveau contrat" >
+                       
+                       
+                        <p:menuitem  value="groupe de prêts" url="#" />
+                        <p:menuitem  value="grande branche" url="#" />
+                        <p:menuitem  value="groupe d'entreprise" url="#" />
+
+                    </p:submenu>
+                    <p:submenu label="liste de contrats" >
+                        <p:menuitem value="contrats actifs" url="#" />
+                        <p:menuitem value="contrats resiliés" url="#" />
+                        <p:menuitem icon="ui-icon-search" value="rechercher contrat" url="#" />
+                    </p:submenu>
+                    <p:separator/>
+                    <p:menuitem value="resilier contrat"  icon="ui-icon-close"  />
+
+                </p:submenu>
+                <p:submenu  style="margin-left: 4px" label="RESULTATS/ETATS" icon="ui-icon-print">
+                    <p:submenu label="bordereaux  cession" >
+                        <p:menuitem value="groupe de prêts" url="#" />
+                        <p:menuitem value="grande branche" url="#" />
+                        <p:menuitem value="groupe d'entreprise" url="#" />
+                    </p:submenu>
+                   
+                    <p:menuitem value="bilan sinistre"  />
+                    <p:separator />
+                    <p:menuitem value="contrats effectués"  />
+                </p:submenu>
+
+
+                <p:submenu label="REGLAGES" icon="ui-icon-gear">
+                    <p:submenu label="application" >
+                        <p:menuitem value="types contrats"   update="messages"/>
+                        <p:menuitem value="garanties"   update="messages"/>
+                        <p:menuitem value="mode payement" update="messages"/>
+                        <p:menuitem value="type apporteur" update="messages"/>
+                    </p:submenu>
+                    <p:submenu label="utilisateurs" icon="ui-icon-person">
+                        <p:menuitem value="producteurs"  icon="ui-icon-person" ajax="false"/>
+                        <p:menuitem value="profils"  update="messages" ajax="false"/>
+                        <p:menuitem value="droits"  icon="ui-icon-pencil" update="messages" ajax="false"/>
+
+                    </p:submenu>
+                </p:submenu>
+
+                <f:facet name="options">
+                    <p:menuButton value="USER">
+                        <p:menuitem value="verouiller" actionListener="#{menuView.save}" update="messages" icon="ui-icon-disk"/>
+                        <p:menuitem value="deconnecter" actionListener="#{menuView.update}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+                        <p:separator />
+                        <p:menuitem value="changer mot de passe" icon="ui-icon-extlink"/>
+                    </p:menuButton>        </f:facet>
+            </p:menubar>
+</h:form>
+        
+        
+        
+        
+    <div class="page-content">
+    	<div class="row">
+		  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li class="current"><a href="index.html"> <i class="glyphicon glyphicon-home"></i>Menu</a></li>
+                    <li><a id="colorside"> <h:graphicImage  style="height: 23px; width: 23px"  value="/resources/images/reassurance.png"/> Nouveau Contrat</a></li>
+                    <li><a id="colorside"><h:graphicImage  style="height: 20px; width: 20px"  value="/resources/images/s.png"/>Sinistre</a></li>
+                    <li><a id="colorside"><h:graphicImage  style="height: 15px; width: 15px"  value="/resources/images/search.png"/> Rechercher</a></li>
+                    <li><a id="colorside"><h:graphicImage  style="height: 15px; width: 15px"  value="/resources/images/delete.png"/> Resilier contrat</a></li>
+                   
+                   
+                </ul>
+             </div>
+		  </div>
+		  <div class="col-md-10">
+		  
+                      
+                      <ui:insert name=" contenu">
+                          
+                      </ui:insert>
+		 
+		
+		</div>
+    </div>
+</div>
+        
+        
+         
+
+    
+
+    </h:body>
+
+</html>

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    template="./../../template/layout.xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:bnu="http://bootsfaces.net/ui"
+    xmlns:pe="http://primefaces.org/ui/extensions"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name=" contenu">
+        <h:form id="formtypecontrat">
+            <p:growl id="growla"  showDetail="true" showSummary="false" autoUpdate="true" life="700" />
+
+            <div style="margin-top: -19px;margin-bottom: 10px;margin-left: 1070px">
+                <p:button icon="ui-icon-power" title="fermer"  style="font-size: 7px" href="/index.xhtml"/> 
+            </div>
+            <p:panel id="formPanel" header="Edition" styleClass="panel">
+                <h:panelGrid columns="2">
+                    <h:outputText value="Libelle:" />
+                    <p:inputText   autocomplete="off"    id="typecontrat"   style="width: 200px;margin-top: 2px" maxlength="100">
+                        <f:validateRegex pattern="[a-zA-Z]*"></f:validateRegex>
+                    </p:inputText>
+
+                    <h:outputText value="Accessoires:  " />
+                    <pe:inputNumber required="true" id="accessoire"  
+                                    autocomplete="off" emptyValue="0" 
+                                    requiredMessage="veuillez renseigner le prix accessoire" 
+                                    style="width: 200px;margin-top: 2px" 
+                                    
+                                    decimalPlaces="0"     symbol="FCFA" >
+                        
+                    </pe:inputNumber>
+
+                </h:panelGrid>
+                <p:commandButton value="sup"   id="supp"  icon="ui-icon-trash" onclick="PF('con').show();" />
+
+
+            </p:panel>
+
+            <p:dialog widgetVar="con" hideEffect="drop" header="Suppression" height="80" width="200" >
+
+            </p:dialog>
+
+        </h:form>
+
+    </ui:define>
+
+</ui:composition>
